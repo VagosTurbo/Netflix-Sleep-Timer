@@ -1,0 +1,38 @@
+{
+  "appName": {
+    "message": "Netflix Timer"
+  },
+  "appDescription": {
+    "message": "Automaticky zastaví Netflix po určitém čase."
+  },
+  "timerLabel": {
+    "message": "Vlastní čas (minuty):"
+  },
+  "quickSelectLabel": {
+    "message": "Rychlá volba:"
+  },
+  "pauseOnEndButton": {
+    "message": "Zastavit po skončení videa"
+  },
+  "startButton": {
+    "message": "Spustit"
+  },
+  "pauseButton": {
+    "message": "Pauza"
+  },
+  "resumeButton": {
+    "message": "Pokračovat"
+  },
+  "cancelButton": {
+    "message": "Zrušit"
+  },
+  "buyMeCoffee": {
+    "message": "Buy Me a Coffee"
+  },
+  "countdownText": {
+    "message": "Zbývá: "
+  },
+  "timeExpiredText": {
+    "message": "Čas vypršel!"
+  }
+}

@@ -43,7 +43,13 @@ document.addEventListener("DOMContentLoaded", () => {
         function: getRemainingVideoTime
       }, (results) => {
         if (results && results[0] && results[0].result) {
-          document.getElementById("timer").value = Math.ceil(results[0].result / 60);
+          let time = Math.ceil(results[0].result / 60);
+
+          if(time > 1) {
+            document.getElementById("timer").value = time - 1;
+          } else {
+            document.getElementById("timer").value = time;
+          }
         }
       });
     });
@@ -51,7 +57,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.getElementById("start").addEventListener("click", () => {
     let time = parseInt(document.getElementById("timer").value);
-    // time = 0.1; // For testing
     if (!isNaN(time) && time > 0) {
       document.getElementById("settingsButton").classList.add("hidden");
       document.getElementById("spacer").classList.add("hidden");

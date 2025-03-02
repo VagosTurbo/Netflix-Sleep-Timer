@@ -1,0 +1,38 @@
+{
+  "appName": {
+    "message": "Netflix Timer"
+  },
+  "appDescription": {
+    "message": "Automatically pauses Netflix after a certain time."
+  },
+  "timerLabel": {
+    "message": "Custom Time (minutes):"
+  },
+  "quickSelectLabel": {
+    "message": "Quick Select:"
+  },
+  "pauseOnEndButton": {
+    "message": "Pause at the end of the video"
+  },
+  "startButton": {
+    "message": "Start"
+  },
+  "pauseButton": {
+    "message": "Pause"
+  },
+  "resumeButton": {
+    "message": "Resume"
+  },
+  "cancelButton": {
+    "message": "Cancel"
+  },
+  "buyMeCoffee": {
+    "message": "Buy Me a Coffee"
+  },
+  "countdownText": {
+    "message": "Remaining: "
+  },
+  "timeExpiredText": {
+    "message": "Time's up!"
+  }
+}
