@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><span id="appName"></span></title>
+  <script src="popup.js" defer></script>
+  <script src="tailwind_v408.js"></script>
+  <style>
+    #settingsButton svg {
+      fill: #dc2626;
+      transition: fill 0.3s;
+    }
+    #settingsButton:hover svg {
+      fill: #ef4444;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body class="bg-black text-white p-6 w-72 rounded-lg shadow-lg border border-red-600">
+  <div id="header-container" class="flex items-center justify-between mb-4">
+    <!-- Invisible Spacer -->
+    <div id="spacer" class="w-5"></div>
+  
+    <!-- Centered Headline -->
+    <h2 id="headline" class="text-xl font-bold text-red-500 text-center flex-grow">
+      <span id="appName"></span>
+    </h2>
+  
+    <!-- Settings Button -->
+    <button id="settingsButton" class="transition">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 48 48">
+        <path d="M39.139,26.282C38.426,25.759,38,24.919,38,24.034s0.426-1.725,1.138-2.247l3.294-2.415	c0.525-0.386,0.742-1.065,0.537-1.684c-0.848-2.548-2.189-4.872-3.987-6.909c-0.433-0.488-1.131-0.642-1.728-0.38l-3.709,1.631	c-0.808,0.356-1.749,0.305-2.516-0.138c-0.766-0.442-1.28-1.23-1.377-2.109l-0.446-4.072c-0.071-0.648-0.553-1.176-1.191-1.307	c-2.597-0.531-5.326-0.54-7.969-0.01c-0.642,0.129-1.125,0.657-1.196,1.308l-0.442,4.046c-0.097,0.88-0.611,1.668-1.379,2.11	c-0.766,0.442-1.704,0.495-2.515,0.138l-3.729-1.64c-0.592-0.262-1.292-0.11-1.725,0.377c-1.804,2.029-3.151,4.35-4.008,6.896	c-0.208,0.618,0.008,1.301,0.535,1.688l3.273,2.4C9.574,22.241,10,23.081,10,23.966s-0.426,1.725-1.138,2.247l-3.294,2.415	c-0.525,0.386-0.742,1.065-0.537,1.684c0.848,2.548,2.189,4.872,3.987,6.909c0.433,0.489,1.133,0.644,1.728,0.38l3.709-1.631	c0.808-0.356,1.748-0.305,2.516,0.138c0.766,0.442,1.28,1.23,1.377,2.109l0.446,4.072c0.071,0.648,0.553,1.176,1.191,1.307	C21.299,43.864,22.649,44,24,44c1.318,0,2.648-0.133,3.953-0.395c0.642-0.129,1.125-0.657,1.196-1.308l0.443-4.046	c0.097-0.88,0.611-1.668,1.379-2.11c0.766-0.441,1.705-0.493,2.515-0.138l3.729,1.64c0.594,0.263,1.292,0.111,1.725-0.377	c1.804-2.029,3.151-4.35,4.008-6.896c0.208-0.618-0.008-1.301-0.535-1.688L39.139,26.282z M24,31c-3.866,0-7-3.134-7-7s3.134-7,7-7	s7,3.134,7,7S27.866,31,24,31z"></path>
+      </svg>
+    </button>
+  </div>
+  
+  <div id="timer-setup">
+    <div class="mb-4">
+      <label for="timer" class="block text-sm mb-2"><span id="timerLabel"></span></label>
+      <input type="number" id="timer" class="w-full p-2 bg-gray-950 border border-red-600 rounded text-white focus:ring-2 focus:ring-red-500">
+    </div>
+    
+    <div class="mb-2">
+      <label class="block text-sm mb-2"><span id="quickSelectLabel"></span></label>
+      <div class="grid grid-cols-3 gap-2">
+        <button class="quick-time border border-red-600 bg-red-950 text-white hover:bg-red-900 hover:text-white transition p-2 rounded font-bold" data-time="10">10 min</button>
+        <button class="quick-time border border-red-600 bg-red-950 text-white hover:bg-red-900 hover:text-white transition p-2 rounded font-bold" data-time="20">20 min</button>
+        <button class="quick-time border border-red-600 bg-red-950 text-white hover:bg-red-900 hover:text-white transition p-2 rounded font-bold" data-time="30">30 min</button>
+      </div>
+    </div>
+    
+    <div class="mb-5 flex items-center">
+      <button id="pauseOnEnd" class="w-full border border-red-600 bg-red-950 text-white hover:bg-red-900 hover:text-white transition p-2 rounded font-bold"><span id="pauseOnEndButton"></span></button>
+    </div>
+    
+    <button id="start" class="w-full bg-red-800 hover:bg-red-700 transition p-2 rounded font-bold text-white"><span id="startButton"></span></button>
+  </div>
+  
+  <div id="countdown-container" class="hidden">
+    <div id="countdown" class="mt-4 text-center text-lg font-semibold text-red-400"></div>
+    <div class="flex justify-between mt-4 space-x-2">
+      <button id="pause" class="w-full bg-red-800 hover:bg-red-700 transition p-2 rounded font-bold text-white"><span id="pauseButton"></span></button>
+      <button id="cancel" class="w-full border border-red-600 bg-red-950 hover:bg-red-900 transition p-2 rounded font-bold text-white"><span id="cancelButton"></span></button>
+    </div>
+  </div>
+
+  <div id="settings-container" class="hidden">
+    <div class="container">
+      <h1 class="text-xl font-bold text-red-500 text-center mb-4">Settings</h1>
+
+      <label for="quickTime1" class="block text-sm mb-2">Quick Time 1 (minutes):</label>
+      <input type="number" id="quickTime1" min="1" max="60" class="w-full p-2 bg-gray-950 border border-red-600 rounded text-white focus:ring-2 focus:ring-red-500">
+
+      <label for="quickTime2" class="block text-sm mb-2">Quick Time 2 (minutes):</label>
+      <input type="number" id="quickTime2" min="1" max="60" class="w-full p-2 bg-gray-950 border border-red-600 rounded text-white focus:ring-2 focus:ring-red-500">
+
+      <label for="quickTime3" class="block text-sm mb-2">Quick Time 3 (minutes):</label>
+      <input type="number" id="quickTime3" min="1" max="60" class="w-full p-2 bg-gray-950 border border-red-600 rounded text-white focus:ring-2 focus:ring-red-500">
+
+      <button id="saveSettings" class="w-full bg-red-800 hover:bg-red-700 transition p-2 rounded font-bold text-white mt-4">Save Settings</button>
+      <button id="backButton" class="w-full bg-gray-800 hover:bg-gray-700 transition p-2 rounded font-bold text-white mt-2">Back</button>
+    </div>
+  </div>
+
+  <div class="mt-4 text-center">
+    <a href="https://buymeacoffee.com/borissemanco" target="_blank" class="text-xs text-red-500 hover:text-red-400 transition"><span id="buyMeCoffee"></span></a>
+  </div>
+</body>
+</html>

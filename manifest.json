@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Netflix Sleep Timer",
+  "version": "1.0",
+  "description": "Automatically pauses Netflix after a certain time.",
+  "permissions": ["storage", "alarms", "activeTab", "scripting"],
+  "host_permissions": ["https://www.netflix.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.netflix.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "default_locale": "en"
+}
