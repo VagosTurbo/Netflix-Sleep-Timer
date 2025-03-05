@@ -66,7 +66,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // Event listener for the "Start" button
   document.getElementById("start").addEventListener("click", () => {
     let time = parseInt(document.getElementById("timer").value);
-    time = 0.1;
     if (!isNaN(time) && time > 0) {
       document.getElementById("settingsButton").classList.add("hidden");
       document.getElementById("spacer").classList.add("hidden");
