@@ -46,20 +46,10 @@ Here, you can customize the three quick select buttons from homepage
 ### Project Structure
 
 - `background.js`: Handles the timer logic and communicates with the content script.
-- `content.js`: Injects the timer button into the Netflix player controls.
 - `popup.js`: Manages the user interface for setting and controlling the timer.
 - `manifest.json`: Defines the extension's permissions and background scripts.
 - `popup.html`: The HTML file for the extension's popup interface.
 - `tailwind_v408.js`: Contains Tailwind CSS configurations.
-
-### Scripts
-
-- `startTimer(time)`: Starts the timer with the specified duration.
-- `pauseTimer()`: Pauses the timer.
-- `resumeTimer()`: Resumes the timer.
-- `cancelTimer()`: Cancels the timer.
-- `pauseVideo()`: Pauses the currently playing video on Netflix.
-- `netflixPause()`: Executes the `pauseVideo` function in the context of the Netflix tab.
 
 ## Contributing
 
