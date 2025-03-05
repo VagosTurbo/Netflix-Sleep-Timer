@@ -6,6 +6,7 @@
   <title><span id="appName"></span></title>
   <script src="popup.js" defer></script>
   <script src="tailwind_v408.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Teko:wght@600&display=swap" rel="stylesheet">
   <style>
     #settingsButton svg {
       fill: #dc2626;
@@ -17,6 +18,11 @@
     .hidden {
       display: none;
     }
+    .teko-semibold {
+      font-family: "Teko", sans-serif;
+      font-weight: 600;
+      font-style: normal;
+    }
   </style>
 </head>
 <body class="bg-black text-white p-6 w-72 rounded-lg shadow-lg border border-red-600">
@@ -25,7 +31,7 @@
     <div id="spacer" class="w-5"></div>
   
     <!-- Centered Headline -->
-    <h2 id="headline" class="text-xl font-bold text-red-500 text-center flex-grow">
+    <h2 id="headline" class="text-4xl teko-semibold text-red-500 text-center flex-grow">
       <span id="appName"></span>
     </h2>
   
@@ -60,7 +66,7 @@
   </div>
   
   <div id="countdown-container" class="hidden">
-    <div id="countdown" class="mt-4 text-center text-lg font-semibold text-red-400"></div>
+    <div id="countdown" class="mt-4 text-center text-8xl text-red-400 teko-semibold"></div> 
     <div class="flex justify-between mt-4 space-x-2">
       <button id="pause" class="w-full bg-red-800 hover:bg-red-700 transition p-2 rounded font-bold text-white"><span id="pauseButton"></span></button>
       <button id="cancel" class="w-full border border-red-600 bg-red-950 hover:bg-red-900 transition p-2 rounded font-bold text-white"><span id="cancelButton"></span></button>
