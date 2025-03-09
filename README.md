@@ -1,6 +1,6 @@
 # Netflix Sleep Timer
 
-Netflix Sleep Timer is a Chrome extension that automatically pauses Netflix after a specified amount of time. This is useful for those who like to watch Netflix before bed and want to ensure that the video stops playing after they fall asleep.
+Netflix Sleep Timer is a Chrome extension that automatically pauses Netflix (works also on YouTube, HBO, Apple TV+, ...) after a specified amount of time. This is useful for those who like to watch Netflix before bed and want to ensure that the video stops playing after they fall asleep.
 
 ## Screenshots
 
@@ -24,10 +24,11 @@ Here, you can customize the three quick select buttons from homepage
 
 ## Features
 
-- Set a timer to automatically pause Netflix (works also on HBO, YouTube, ...) after a specified duration.
+- Set a timer to automatically pause Netflix after a specified duration.
 - Save quick timer settings for easy access.
 - Pause, resume, or cancel the timer at any time.
 - Simple and intuitive user interface.
+- **New Feature:** You can now type numbers directly to set the timer and press Enter to start the timer without clicking on the input field.
 
 ## Installation
 
@@ -42,14 +43,6 @@ Here, you can customize the three quick select buttons from homepage
 2. Click on the Netflix Sleep Timer extension icon in the Chrome toolbar.
 3. Set the desired timer duration and click "Start Timer".
 4. The video will automatically pause when the timer expires.
-
-### Project Structure
-
-- `background.js`: Handles the timer logic and communicates with the content script.
-- `popup.js`: Manages the user interface for setting and controlling the timer.
-- `manifest.json`: Defines the extension's permissions and background scripts.
-- `popup.html`: The HTML file for the extension's popup interface.
-- `tailwind_v408.js`: Contains Tailwind CSS configurations.
 
 ## Contributing
 
