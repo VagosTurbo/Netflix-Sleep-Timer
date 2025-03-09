@@ -43,6 +43,25 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // Add event listener to listen for number key presses and update the timer input field
+  document.addEventListener("keydown", (event) => {
+    // Only listen for key presses if the timer setup is visible
+    if (document.getElementById("timer-setup").classList.contains("hidden")) return;
+    
+    if (event.key === "Enter") startTimer();
+
+    // Prevent key presses from being captured if the timer input field is focused
+    if (document.activeElement.id === "timer") return;
+
+    if (event.key >= "0" && event.key <= "9") {
+      let timerInput = document.getElementById("timer");
+      timerInput.value += event.key;
+    } else if (event.key === "Backspace") {
+      let timerInput = document.getElementById("timer");
+      timerInput.value = timerInput.value.slice(0, -1);
+    }
+  });
+
   // Event listener for the "Pause on End" button
   document.getElementById("pauseOnEnd").addEventListener("click", () => {
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
@@ -64,9 +83,16 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Event listener for the "Start" button
-  document.getElementById("start").addEventListener("click", () => {
+  document.getElementById("start").addEventListener("click", startTimer);
+
+  // Function to start the timer
+  function startTimer() {
     let time = parseInt(document.getElementById("timer").value);
     if (!isNaN(time) && time > 0) {
+      if (time > 600) {
+        alert("Please enter a time less than 600 minutes.");
+        return;
+      }
       document.getElementById("settingsButton").classList.add("hidden");
       document.getElementById("spacer").classList.add("hidden");
       chrome.runtime.sendMessage({ action: "startTimer", time }, () => {
@@ -77,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       });
     }
-  });
+  }
 
   // Event listener for the "Pause" button
   document.getElementById("pause").addEventListener("click", () => {
