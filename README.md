@@ -37,6 +37,10 @@ Here, you can customize the three quick select buttons from homepage
 3. Enable "Developer mode" in the top right corner.
 4. Click on "Load unpacked" and select the directory where you cloned or extracted the repository.
 
+## Chrome Web Store
+
+You can also install the extension directly from the [Chrome Web Store](https://chromewebstore.google.com/detail/netflix-sleep-timer/inkolgjoidkhgaangibkjdkfooebkgog).
+
 ## Usage
 
 1. Open Netflix and start playing a video.
