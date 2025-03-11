@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Netflix Sleep Timer",
-  "version": "1.0",
+  "version": "1.1",
   "description": "Automatically pauses Netflix and your favorite sites after a certain time.",
   "permissions": ["storage", "activeTab", "scripting"],
   "background": {
