@@ -3,6 +3,7 @@
 ![Chrome Web Store](https://img.shields.io/chrome-web-store/v/inkolgjoidkhgaangibkjdkfooebkgog?label=Chrome%20Web%20Store)
 ![Chrome Web Store Last Updated](https://img.shields.io/chrome-web-store/last-updated/inkolgjoidkhgaangibkjdkfooebkgog)
 ![Chrome Web Store Rating](https://img.shields.io/chrome-web-store/rating/inkolgjoidkhgaangibkjdkfooebkgog)
+![Chrome Web Store Users](https://img.shields.io/chrome-web-store/users/inkolgjoidkhgaangibkjdkfooebkgog)
 ![MIT License](https://img.shields.io/badge/license-MIT-blue)
 
 Netflix Sleep Timer is a Chrome extension that automatically pauses Netflix (works also on YouTube, HBO, Apple TV+, ...) after a specified amount of time. This is useful for those who like to watch Netflix before bed and want to ensure that the video stops playing after they fall asleep.
