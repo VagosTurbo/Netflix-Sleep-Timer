@@ -27,20 +27,87 @@
 </head>
 <body class="bg-black text-white p-6 w-72 rounded-lg shadow-lg border border-red-600">
   <div id="header-container" class="flex items-center justify-between mb-4">
+    
     <!-- Invisible Spacer -->
     <div id="spacer" class="w-5"></div>
-  
+    
     <!-- Centered Headline -->
     <h2 id="headline" class="text-4xl teko-semibold text-red-500 text-center flex-grow">
       <span id="appName"></span>
     </h2>
-  
+
     <!-- Settings Button -->
     <button id="settingsButton" class="transition">
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 48 48">
         <path d="M39.139,26.282C38.426,25.759,38,24.919,38,24.034s0.426-1.725,1.138-2.247l3.294-2.415	c0.525-0.386,0.742-1.065,0.537-1.684c-0.848-2.548-2.189-4.872-3.987-6.909c-0.433-0.488-1.131-0.642-1.728-0.38l-3.709,1.631	c-0.808,0.356-1.749,0.305-2.516-0.138c-0.766-0.442-1.28-1.23-1.377-2.109l-0.446-4.072c-0.071-0.648-0.553-1.176-1.191-1.307	c-2.597-0.531-5.326-0.54-7.969-0.01c-0.642,0.129-1.125,0.657-1.196,1.308l-0.442,4.046c-0.097,0.88-0.611,1.668-1.379,2.11	c-0.766,0.442-1.704,0.495-2.515,0.138l-3.729-1.64c-0.592-0.262-1.292-0.11-1.725,0.377c-1.804,2.029-3.151,4.35-4.008,6.896	c-0.208,0.618,0.008,1.301,0.535,1.688l3.273,2.4C9.574,22.241,10,23.081,10,23.966s-0.426,1.725-1.138,2.247l-3.294,2.415	c-0.525,0.386-0.742,1.065-0.537,1.684c0.848,2.548,2.189,4.872,3.987,6.909c0.433,0.489,1.133,0.644,1.728,0.38l3.709-1.631	c0.808-0.356,1.748-0.305,2.516,0.138c0.766,0.442,1.28,1.23,1.377,2.109l0.446,4.072c0.071,0.648,0.553,1.176,1.191,1.307	C21.299,43.864,22.649,44,24,44c1.318,0,2.648-0.133,3.953-0.395c0.642-0.129,1.125-0.657,1.196-1.308l0.443-4.046	c0.097-0.88,0.611-1.668,1.379-2.11c0.766-0.441,1.705-0.493,2.515-0.138l3.729,1.64c0.594,0.263,1.292,0.111,1.725-0.377	c1.804-2.029,3.151-4.35,4.008-6.896c0.208-0.618-0.008-1.301-0.535-1.688L39.139,26.282z M24,31c-3.866,0-7-3.134-7-7s3.134-7,7-7	s7,3.134,7,7S27.866,31,24,31z"></path>
       </svg>
     </button>
+
+  </div>
+
+  
+  <!-- Help Modal -->
+  <div id="helpModal" class="hidden absolute inset-0 bg-black flex items-center justify-center z-50">
+    <div class="bg-black w-full h-full overflow-y-auto">
+      <div class="p-6 max-w-2xl mx-auto">
+        <div class="flex justify-between items-center mb-6">
+          <h3 class="text-2xl teko-semibold text-red-500">How to Use</h3>
+          <button id="closeHelp" class="text-gray-400 hover:text-white transition">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+            </svg>
+          </button>
+        </div>
+        
+        <div class="space-y-6 text-gray-300">
+          <section>
+            <h4 class="text-lg font-semibold text-red-400 mb-2">Setting a Timer</h4>
+            <ul class="list-disc list-inside space-y-2">
+              <li>Enter time in minutes or use quick select buttons</li>
+              <li>Click "Start" or press Enter</li>
+              <li>Maximum time is 600 minutes (10 hours)</li>
+              <li>Quick select buttons are customizable in settings</li>
+            </ul>
+          </section>
+          
+          <section>
+            <h4 class="text-lg font-semibold text-red-400 mb-2">During Countdown</h4>
+            <ul class="list-disc list-inside space-y-2">
+              <li>Pause/Resume the timer</li>
+              <li>Cancel to stop the timer</li>
+              <li>Video will pause when timer expires</li>
+            </ul>
+          </section>
+          
+          <section>
+            <h4 class="text-lg font-semibold text-red-400 mb-2">Pause at End</h4>
+            <ul class="list-disc list-inside space-y-2">
+              <li>Open video and click "Pause at End"</li>
+              <li>Automatically sets timer to video end</li>
+              <li>On <strong class="text-white">Netflix</strong>, it will pause at credits</li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Feedback Modal -->
+  <div id="feedbackModal" class="hidden absolute inset-0 bg-black flex items-center justify-center z-50">
+    <div class="bg-black w-full h-full overflow-y-auto">
+      <div class="p-6 max-w-2xl mx-auto">
+        <div class="flex justify-between items-center mb-6">
+          <h3 class="text-2xl teko-semibold text-red-500">Send Feedback</h3>
+          <button id="closeFeedback" class="text-gray-400 hover:text-white transition">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+            </svg>
+          </button>
+        </div>
+        <textarea id="feedbackText" rows="12" class="w-full p-4 bg-gray-900 border border-red-600 rounded text-white focus:ring-2 focus:ring-red-500 mb-4 resize-none" placeholder="Tell me what you think..."></textarea>
+        <button id="submitFeedback" class="w-full bg-red-800 hover:bg-red-700 transition p-2 rounded font-bold text-white">Submit</button>
+      </div>
+    </div>
   </div>
   
   <!-- Timer Setup View -->
@@ -77,8 +144,25 @@
 
   <!-- Settings view -->
   <div id="settings-container" class="hidden">
+     
     <div class="container">
-      <h1 class="text-4xl teko-semibold text-red-500 text-center mb-4">Settings</h1>
+      <div id="settings-header" class="flex items-center justify-center mb-4">
+        <h1 class="text-4xl teko-semibold text-red-500 text-center ml-16">Settings</h1>
+        
+        <!-- Help Button -->
+        <button id="helpButton" class="transition mx-4">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#dc2626">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"/>
+          </svg>
+        </button>
+
+        <!-- Feedback Button -->
+        <button id="feedbackButton" class="transition">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#dc2626">
+            <path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 9h-2V5h2v6zm0 4h-2v-2h2v2z"/>
+          </svg>
+        </button>
+      </div>
 
       <label for="quickTime1" class="block text-sm mb-2">Quick Time 1 (minutes):</label>
       <input type="number" id="quickTime1" min="1" max="60" class="w-full p-2 bg-gray-950 border border-red-600 rounded text-white focus:ring-2 focus:ring-red-500">
